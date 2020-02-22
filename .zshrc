@@ -142,10 +142,10 @@ function tdeploy() {
 }
 
 function twclonelive() {
-    terminus env:clone-content --cc -- $1.live test;
-    terminus remote:wp -- search-replace "$2" "https://live-$1.pantheonsite.io";
-    terminus env:clone-content --cc -- $1.test dev;
-    terminus remote:wp -- search-replace "https://test-$1.pantheonsite.io" "https://dev-$1.pantheonsite.io";
+    terminus env:clone-content --cc -y -- $1.live test;
+    terminus remote:wp -- $1.test search-replace "$2" "https://live-$1.pantheonsite.io";
+    terminus env:clone-content -y --cc -- $1.test dev;
+    terminus remote:wp -- $1.dev search-replace "https://test-$1.pantheonsite.io" "https://dev-$1.pantheonsite.io";
 }
 
 function twm() {
