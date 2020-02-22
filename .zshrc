@@ -8,8 +8,8 @@ export PATH="$(yarn global bin):$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export GITHUB_USER=*****************
-export GITHUB_PASSWORD=***********************
+export GITHUB_USER=mkykode@gmail.com
+export GITHUB_PASSWORD=flex.beer.gasoline.clue
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -113,7 +113,7 @@ alias trwp="terminus remote:wp --"
 alias tcache="terminus env:clear-cache"
 alias lnd="lando"
 alias lndoff="lando poweroff"
-alias lndrb="lando rebuild"
+alias lndrb="lando rebuild -y"
 alias lndrs="lando restart"
 alias lndd="lando destroy"
 alias lndi="lando info"
@@ -143,9 +143,9 @@ function tdeploy() {
 
 function twclonelive() {
     terminus env:clone-content --cc -y -- $1.live test;
-    terminus remote:wp -- $1.test search-replace "$2" "https://live-$1.pantheonsite.io";
+    terminus remote:wp -- $1.test search-replace "//$2" "//test-$1.pantheonsite.io";
     terminus env:clone-content -y --cc -- $1.test dev;
-    terminus remote:wp -- $1.dev search-replace "https://test-$1.pantheonsite.io" "https://dev-$1.pantheonsite.io";
+    terminus remote:wp -- $1.dev search-replace "//test-$1.pantheonsite.io" "//dev-$1.pantheonsite.io";
 }
 
 function twm() {
