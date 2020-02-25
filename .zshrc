@@ -8,8 +8,8 @@ export PATH="$(yarn global bin):$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export GITHUB_USER=mkykode@gmail.com
-export GITHUB_PASSWORD=flex.beer.gasoline.clue
+export GITHUB_USER=
+export GITHUB_PASSWORD=
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -80,7 +80,6 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /Users/jullweber/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . ~/z.sh
-eval "$(hub alias -s)"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -126,16 +125,20 @@ alias lwppa="lando wp plugin activate"
 alias lwppd="lando wp plugin deactivate"
 alias lwppi="lando wp plugin install"
 alias lwppu="lando wp plugin uninstall"
+alias lwppua="lando wp plugin update --all"
+alias lwptua="lando wp theme update --all"
 alias lwppl="lando wp plugin list"
 alias y="yarn"
 alias ys="yarn start"
 alias ya="yarn add"
 alias yd="yarn dev"
 alias yb="yarn build"
-alias yr="yarn build:production"
+alias yp="yarn prod"
+alias ybp="yarn build:production"
 alias yw="yarn watch"
 alias yr="yarn remove"
 alias yi="yarn init -y"
+alias git="hub"
 
 function tdeploy() {
     terminus env:deploy --cc -- $1.test;
