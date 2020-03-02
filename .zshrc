@@ -139,7 +139,7 @@ alias yw="yarn watch"
 alias yr="yarn remove"
 alias yi="yarn init -y"
 alias git="hub"
-
+alias dnsflush="sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache"
 function tdeploy() {
     terminus env:deploy --cc -- $1.test;
     terminus env:deploy --cc -- $1.live;
