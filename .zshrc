@@ -8,8 +8,8 @@ export PATH="$(yarn global bin):$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export GITHUB_USER=
-export GITHUB_PASSWORD=
+export GITHUB_USER=mkykode@gmail.com
+export GITHUB_PASSWORD=flex.beer.gasoline.clue
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -74,7 +74,7 @@ ZSH_THEME=""
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm zsh-syntax-highlighting osx extract vscode zsh-autosuggestions)
+plugins=(git node npm zsh-syntax-highlighting osx extract vscode zsh-autosuggestions wp-cli)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -140,6 +140,14 @@ alias yr="yarn remove"
 alias yi="yarn init -y"
 alias git="hub"
 alias dnsflush="sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache"
+alias n="npm"
+alias ns="npm start"
+alias ninit="npm init"
+alias nr="npm run"
+alias nb="npm run build"
+alias ni="npm install"
+alias nre="npm remove"
+alias nrpu="npm run packages-update "
 function tdeploy() {
     terminus env:deploy --cc -- $1.test;
     terminus env:deploy --cc -- $1.live;
